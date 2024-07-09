@@ -85,6 +85,7 @@ export default function AssignmentEditor() {
                     </td>
                 </tr>
                 <tr>
+                    <td>
                     <label htmlFor="wd-available-from"> Available from: </label>
                     <input type="date"
                         id="wd-available-from"
@@ -99,11 +100,13 @@ export default function AssignmentEditor() {
                         max="2000-01-25"
                         value="2000-01-21"
                     /><br />
-                    
+                    </td>
                 </tr>
                 <tr>
+                    <td>
                     <hr />
                     <button>Cancel</button> <button>Save</button>
+                    </td>
                 </tr>
             </table>
         </div>
