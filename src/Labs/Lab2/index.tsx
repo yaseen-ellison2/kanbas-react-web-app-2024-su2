@@ -1,4 +1,9 @@
 import BackgroundColors from "./BackgroundColors";
+import BootstrapForms from "./BootstrapForms";
+import BootstrapGrids from "./BootstrapGrids";
+import BootstrapList from "./BootstrapLists";
+import BootstrapNavigation from "./BootstrapNavigation";
+import BootstrapTables from "./BootstrapTables";
 import Borders from "./Borders";
 import Corners from "./Corners";
 import Dimensions from "./Dimensions";
@@ -11,6 +16,7 @@ import Margins from "./Margins";
 import Padding from "./Padding";
 import Positions from "./Positions";
 import ReactIconsSampler from "./ReactIcons";
+import ScreenSizeLabel from "./ScreenSizeLabel";
 import Zindex from "./Zindex";
 export default function Lab2() {
   return (
@@ -66,19 +72,25 @@ export default function Lab2() {
           </div>
         </div>
       </div>
-    <ForegroundColors />
-    <BackgroundColors />
-    <Borders />
-    <Padding />
-    <Margins />
-    <Corners />
-    <Dimensions />
-    <Positions />
-    <Zindex />
-    <Float />
-    <GridLayout />
-    <Flex />
-    <ReactIconsSampler />
+      <ForegroundColors />
+      <BackgroundColors />
+      <Borders />
+      <Padding />
+      <Margins />
+      <Corners />
+      <Dimensions />
+      <Positions />
+      <Zindex />
+      <Float />
+      <GridLayout />
+      <Flex />
+      <ReactIconsSampler />
+      <BootstrapGrids />
+      <ScreenSizeLabel />
+      <BootstrapTables />
+      <BootstrapList /> <br/>
+      <BootstrapForms />
+      <BootstrapNavigation />
     </div>
   );
 }

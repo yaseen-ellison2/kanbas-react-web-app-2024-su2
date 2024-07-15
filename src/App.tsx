@@ -9,7 +9,6 @@ function App() {
   return (
     <HashRouter>
       <div>
-        <h1>Yaseen Ellison</h1>
         <Routes>
           <Route path="/Labs/*" element={<Labs />} />
           <Route path="/" element={<Navigate to="Labs" />} />
