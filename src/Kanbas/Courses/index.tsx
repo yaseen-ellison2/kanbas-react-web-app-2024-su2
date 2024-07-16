@@ -5,6 +5,7 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import { FaAlignJustify } from 'react-icons/fa';
+import "./styles.css";
 
 export default function Courses() {
     return (
@@ -14,8 +15,8 @@ export default function Courses() {
                 Course 1234
             </h2>
             <hr />
-                <CoursesNavigation />
-                <div>
+            <CoursesNavigation />
+            <div className="wd-main-content-offset2">
                     <Routes>
                         <Route path="/" element={<Navigate to="Home" />} />
                         <Route path="Home" element={<Home />} />

@@ -2,7 +2,9 @@ import "./index.css";
 
 export default function CoursesNavigation() {
     return (
-        <div id="wd-courses-navigation" className="list-group fs-5 rounded-0">
+        <div id="wd-courses-navigation" className="list-group fs-5 rounded-0 position-fixed bottom-0 top-0 d-none d-lg-block bg-white z-2">
+        {/* maybe insert ^above^: position-fixed bottom-0 top-0 d-none d-lg-block bg-black z-2 (or delete all after rounded-0)*/}
+        
             <a id="wd-course-home-link" href="#/Kanbas/Courses/1234/Home" 
             className="list-group-item active border border-0">Home </a>
 

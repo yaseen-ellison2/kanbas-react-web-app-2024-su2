@@ -1,0 +1,30 @@
+body {margin: 0;padding: 0;}
+body * {font-family: Arial, Helvetica, sans-serif;}
+
+.btn-secondary {
+    --bs-btn-color: #000;
+    --bs-btn-bg: #c7cdd1;
+    --bs-btn-border-color: #c7cdd1;
+    --bs-btn-hover-color: #fff;
+}
+
+.bg-secondary {
+    background-color: #c7cdd1 !important;
+}
+
+.border-gray {
+    border: 1px solid gray;
+}
+
+
+@media (min-width: 992px) {
+    #wd-courses .wd-main-content-offset2 {
+        padding-left: 148px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    #wd-courses .wd-main-content-offset2 {
+        padding-right: 300px !important;
+    }
+}
