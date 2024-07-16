@@ -5,7 +5,7 @@ import LessonControlButtons from "../Modules/LessonControlButtons";
 import AssignmentsControls from "./AssignmentsControls";
 import { SlNotebook } from "react-icons/sl";
 
-export default function Modules() {
+export default function Assignments() {
     return (
         <div id="wd-modules" >
             <ul id="wd-modules" className="list-group rounded-0">

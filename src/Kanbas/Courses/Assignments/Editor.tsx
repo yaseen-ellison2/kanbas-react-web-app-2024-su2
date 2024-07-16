@@ -5,7 +5,7 @@ export default function AssignmentEditor() {
             <input id="wd-name" value="A1 - ENV + HTML" /><br /><br />
 
             <textarea id="wd-description">
-                The assignment is available online Submit a link to the landing page of your Web application running on Netlify. the landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The kanbas application should include a link to navigate back to the landing page.
+                The assignment is available online Submit a link to the landing page of your Web application running on Netlify. the landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The kanbas application should include a link to navigate back to the landing page. 
             </textarea>
 
             <br />
@@ -17,7 +17,7 @@ export default function AssignmentEditor() {
                     <td>
                         <input id="wd-points" value={100} />
                     </td>
-                </tr>
+                </tr> 
                 <tr>
                     <td align="right" valign="top">
                         <label htmlFor="wd-group">Assignment Group</label>
@@ -51,7 +51,7 @@ export default function AssignmentEditor() {
                             <option selected value="ONLINE">
                                 Online </option>
                         </select>
-                    </td>
+                    </td> 
                 </tr>
                 <tr>
                     <label>Online Entry Options</label><br />
@@ -67,45 +67,45 @@ export default function AssignmentEditor() {
                     <label htmlFor="wd-file-upload">File Upload</label><br />
                 </tr>
                 <tr>
-                    Assign <br />
-                    <td align="left" valign="top">
+                    Assign <br/>
+                    <td align="left" valign="top">  
                         <label htmlFor="wd-assign-to"> Assign to </label>
                         <input id="wd-assign-to" placeholder="Everyone" /><br /><br />
                     </td>
                 </tr>
                 <tr>
                     <td align="left" valign="top">
-                        <label htmlFor="wd-due-date"> Due: </label>
-                        <input type="date"
-                            id="wd-due-date"
-                            min="2000-01-15"
-                            max="2000-01-25"
-                            value="2000-01-21"
-                        /><br />
+                    <label htmlFor="wd-due-date"> Due: </label>
+                    <input type="date"
+                        id="wd-due-date"
+                        min="2000-01-15"
+                        max="2000-01-25"
+                        value="2000-01-21"
+                    /><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label htmlFor="wd-available-from"> Available from: </label>
-                        <input type="date"
-                            id="wd-available-from"
-                            min="2000-01-15"
-                            max="2000-01-25"
-                            value="2000-01-21"
-                        />
-                        <label htmlFor="wd-available-until"> Until: </label>
-                        <input type="date"
-                            id="wd-available-until"
-                            min="2000-01-15"
-                            max="2000-01-25"
-                            value="2000-01-21"
-                        /><br />
+                    <label htmlFor="wd-available-from"> Available from: </label>
+                    <input type="date"
+                        id="wd-available-from"
+                        min="2000-01-15"
+                        max="2000-01-25"
+                        value="2000-01-21"
+                    />
+                    <label htmlFor="wd-available-until"> Until: </label>
+                    <input type="date"
+                        id="wd-available-until"
+                        min="2000-01-15"
+                        max="2000-01-25"
+                        value="2000-01-21"
+                    /><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <hr />
-                        <button>Cancel</button> <button>Save</button>
+                    <hr />
+                    <button>Cancel</button> <button>Save</button>
                     </td>
                 </tr>
             </table>
@@ -228,3 +228,5 @@ export default function AssignmentEditor() {
 //         </div>
 //     );
 // }
+
+
