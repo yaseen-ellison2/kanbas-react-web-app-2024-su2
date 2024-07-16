@@ -16,7 +16,7 @@ import { SiStreamlabs } from "react-icons/si";
 {/* Find more icons */ }
 export default function CourseStatus() {
     return (
-        <div id="wd-course-status" style={{ width: "300px" }} className="list-group fs-5 rounded-0 position-fixed bottom-0 top-0 end-0 d-none d-xl-block bg-white z-2">
+        <div id="wd-course-status" style={{ width: "300px" }} className="list-group fs-5 rounded-0 position-fixed bottom-0 top-0 end-0 d-none d-xl-block bg-white mt-5 z-2">
             <h2>Course Status</h2>
             <div className="d-flex">
                 <div className="w-50 pe-1">
