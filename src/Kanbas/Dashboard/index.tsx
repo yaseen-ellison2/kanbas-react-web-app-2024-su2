@@ -60,13 +60,13 @@ export default function Dashboard() {
                         <div className="card">
                             <a className="wd-dashboard-course-link text-decoration-none text-dark"
                                 href="#/Kanbas/Courses/1234/Home">
-                                <img src="/images/reactjs.webp" width="100%" />
+                                <img src="/images/opsys.png" width="100%" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title">
-                                        CS1234 React JS
+                                        CS4404 Operating Systems
                                     </h5>
                                     <p className="card-text">
-                                        Full Stack software developer
+                                        Fundamentals of OS design and functionality.
                                     </p>
                                     <button className="btn btn-primary"> Go </button>
                                 </div>
@@ -77,13 +77,13 @@ export default function Dashboard() {
                         <div className="card">
                             <a className="wd-dashboard-course-link text-decoration-none text-dark"
                                 href="#/Kanbas/Courses/1234/Home">
-                                <img src="/images/reactjs.webp" width="100%" />
+                                <img src="/images/dbsys.jpg" width="100%" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title">
-                                        CS1234 React JS
+                                        CS5505 Database Systems
                                     </h5>
                                     <p className="card-text">
-                                        Full Stack software developer
+                                        Principles of database design and SQL.
                                     </p>
                                     <button className="btn btn-primary"> Go </button>
                                 </div>
@@ -94,13 +94,13 @@ export default function Dashboard() {
                         <div className="card">
                             <a className="wd-dashboard-course-link text-decoration-none text-dark"
                                 href="#/Kanbas/Courses/1234/Home">
-                                <img src="/images/reactjs.webp" width="100%" />
+                                <img src="/images/compnet.png" width="100%" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title">
-                                        CS1234 React JS
+                                        CS6606 Computer Networks
                                     </h5>
                                     <p className="card-text">
-                                        Full Stack software developer
+                                        Networking principles and protocols.
                                     </p>
                                     <button className="btn btn-primary"> Go </button>
                                 </div>
@@ -111,13 +111,13 @@ export default function Dashboard() {
                         <div className="card">
                             <a className="wd-dashboard-course-link text-decoration-none text-dark"
                                 href="#/Kanbas/Courses/1234/Home">
-                                <img src="/images/reactjs.webp" width="100%" />
+                                <img src="/images/unsup.jpg" width="100%" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title">
-                                        CS1234 React JS
+                                        CS7707 Unsupervised ML
                                     </h5>
                                     <p className="card-text">
-                                        Full Stack software developer
+                                        Techniques for clustering and pattern discovery.
                                     </p>
                                     <button className="btn btn-primary"> Go </button>
                                 </div>
