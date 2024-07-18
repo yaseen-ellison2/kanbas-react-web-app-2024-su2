@@ -7,11 +7,11 @@ import { FaGear } from "react-icons/fa6";
 export default function GradesButtons() {
   return (
     <div id="wd-grades-controls" className="text-nowrap">
-      <button id="wd-gear-btn" className="btn btn-md btn-secondary me-1 float-end">
+      <button id="wd-gear-btn" className="btn btn-lg btn-secondary me-1 float-end">
         <FaGear className="position-relative" style={{ bottom: "1px" }} />
       </button>
       <div className="dropdown d-inline me-1 float-end">
-        <button id="wd-export-btn" className="btn btn-md btn-secondary dropdown-toggle"
+        <button id="wd-export-btn" className="btn btn-lg btn-secondary dropdown-toggle"
           type="button" data-bs-toggle="dropdown">
           <FaFileExport className="position-relative me-2" style={{ bottom: "1px" }} />
           Export
@@ -37,7 +37,7 @@ export default function GradesButtons() {
           </li>
         </ul>
       </div>
-      <button id="wd-import-btn" className="btn btn-md btn-secondary me-1 float-end">
+      <button id="wd-import-btn" className="btn btn-lg btn-secondary me-1 float-end">
         <FaFileImport className="position-relative me-2" style={{ bottom: "1px" }} />
         Import
       </button>
