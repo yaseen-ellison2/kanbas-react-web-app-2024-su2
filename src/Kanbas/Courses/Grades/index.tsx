@@ -22,39 +22,6 @@ export default function Grades(){
 
   const courseAssignments = assignments.filter(assignment => assignment.course === cid);
 
-  //     const grade = grades(user._id, assignment._id); // Fetch the grade for the student and assignment
-  //     console.log(`Assignment ID: ${assignment._id}, Grade: ${grade}`);
-
-  // courseAssignments.forEach((assignment) => {
-  //     const grade = grades(user._id, assignment._id); // Fetch the grade for the student and assignment
-  //     console.log(`Assignment ID: ${assignment._id}, Grade: ${grade}`);
-
-  // // current course students
-  // const enrolledStudents = enrollments.filter(enrollment => enrollment.course === cid);
-
-  // // student details
-  // const students = enrolledStudents.map(enrollment => {
-  //   return users.find(user => user._id === enrollment.user);
-  // });
-
-  // // Course Assignments
-  // const courseAssignments = assignments.filter(assignment => assignment.course === cid);
-
-
-  // // Loop through each enrolled user
-  // enrolledUsers.forEach((student) => {
-  //   console.log(`Grades for student ID: ${student._id}`);
-
-
-  //   // Loop through each course assignment
-  //   courseAssignments.forEach((assignment) => {
-  //     const grade = getGrades(student._id, assignment._id); // Fetch the grade for the student and assignment
-  //     console.log(`Assignment ID: ${assignment._id}, Grade: ${grade}`); // Log the assignment ID and the corresponding grade
-  //   });
-  // });
-
-
-
   return(
     // Buttons at Top
     <div id="wd-grades">
@@ -104,32 +71,29 @@ export default function Grades(){
           <b>Student Name</b>
       </div>
         {courseAssignments.map(assignment => (
-      <div key={assignment._id} className="col-2 text-center border">
-        {assignment.title} <br />
+      <div key={assignment._id} className="col text-center border">
+            <b>{assignment.title}</b> <br />
         Out of {assignment.points}
       </div>
         ))}
       </div>
-
-      <div className="row mx-3 wd-bg-color-white">
-        {/* Rows for each student */}
+      
+      {/* Rows for each student */}
           {students.map(student => (
-      <div key={student?._id} className="row mx-3">
-        <div className="col-3 text-left border">
-                <div className="wd-fg-color-red"><b>{student?.firstName} {student?.lastName}</b></div>
+          <div key={student?._id} className="row mx-3 wd-bg-color-white">
+          <div className="col-3 text-left border wd-fg-color-red">
+              <b>{student?.firstName} {student?.lastName}</b>
         </div>
         {courseAssignments.map(assignment => {
           const grade = grades.find(grade => grade.assignment === assignment?._id && grade.student === student?._id);
           return (
-            <div key={assignment?._id} className="col-2 text-center border">
+            <div key={assignment?._id} className="col text-center border">
               {grade ? `${grade.grade}%` : "N/A"}
             </div>
           );
         })}
       </div>
         ))}
-
-      </div>
     </div>
     );
 }
