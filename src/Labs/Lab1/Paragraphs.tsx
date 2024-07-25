@@ -1,7 +1,11 @@
+import { useSelector } from "react-redux"
+
 export default function Paragraphs() {
+  const message = useSelector((state: any) => state.helloReducer.message);
     return(
         <div id="wd-p-tag">
     <h4>Paragraph Tag</h4>
+    {message}
     <p id="wd-p-1">
     This is a paragraph. 
     We often separate a long set of sentences with vertical spaces to make the text easier to read. 
