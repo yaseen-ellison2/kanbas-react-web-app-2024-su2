@@ -5,9 +5,11 @@ import GreenCheckmark from "./GreenCheckmark";
 import { FaPencil } from "react-icons/fa6";
 
 
-export default function ModuleControlButtons({ moduleId, deleteModule, editModule }: { moduleId: string; deleteModule: (moduleId: string) => void;
+export default function ModuleControlButtons(
+  { moduleId, deleteModule, editModule }: { moduleId: string; deleteModule: (moduleId: string) => void;
   editModule: (moduleId: string) => void
- }) {
+ }
+) {
   return (
     <div className="float-end">
       <FaPencil onClick={() => editModule(moduleId)} className="text-primary me-3" />

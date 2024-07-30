@@ -1,11 +1,45 @@
-import * as db from "../../Database";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { useEffect, useState } from "react"
+import { addAssignment, updateAssignment } from "./reducer";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
-export default function AssignmentEditor() {
 
-    const { cid, id  } = useParams();
-    
-    const assignments = db.assignments;
+export default function AssignmentEditor(
+) {
+
+const { cid, id  } = useParams();
+const { assignments } = useSelector((state: any) => state.assignmentsReducer);
+                                        
+const navigate = useNavigate(); 
+const dispatch = useDispatch();
+
+const [assignment, setAssignment] = useState<any>({
+    title: 'New Assignment', 
+    description: "New Description",
+    points: 100,
+    dueDate: new Date().toISOString().split("T")[0],
+    availableDate: new Date().toISOString().split("T")[0],
+  });
+
+  const handleSaveAssignment = () => {
+    if (id !== 'New') {
+      dispatch(updateAssignment(assignment));
+    } else {
+      dispatch(addAssignment({ ...assignment, course: cid }))
+    }
+      navigate(`/Kanbas/Courses/${cid}/Assignments`);}
+
+
+    //useEffect Hook: fetch assignment if editing
+  useEffect(() => {
+    if (id !== 'New') { //check if id != New
+      const current = assignments.find((assignment: any) =>
+        assignment._id === id); //find correct assignment to update via matching id
+      setAssignment(current)                                                    
+      //set state of found assignment                     
+    }}, [id]) 
+
 
     return (
         <div>
@@ -17,7 +51,9 @@ export default function AssignmentEditor() {
                 <label htmlFor="input1" className="form-label">
                     Assignment Name</label>
                 <input type="text" className="form-control"
-                    id="input1" value={`${assignment._id}: ${assignment.title}`} />
+                    id="input1" value={`${assignment._id}: ${assignment.title}`}
+                    onChange = {(e) => setAssignment({ ...assignment, title: e.target.value })} 
+                    />
             </div>
 
             <textarea className="form-control" id="wd-description"
@@ -31,7 +67,9 @@ export default function AssignmentEditor() {
                 </div>
                 <div className="col-8 ">
                     <input type="text" className="form-control"
-                        id="wd-points" value={`${assignment.points}`} />
+                        id="wd-points" value={`${assignment.points}`}
+                        onChange={(e) => setAssignment({ ...assignment, points: e.target.value })
+                        } />
                 </div>
             </div>
 
@@ -97,20 +135,25 @@ export default function AssignmentEditor() {
                         <label htmlFor="input-due" className="form-label"><b>
                             Due</b></label>
                         <input type="text" className="form-control"
-                            id="input-due" value={`${assignment.due_date}`} />
+                            id="input-due" value={`${assignment.due_date}`}
+                            onChange={(e) => setAssignment({ ...assignment, due_date: e.target.value })
+                            } />
                     </div>
                     <div className="row m-3">
                         <div className="col-6 ">
                             <label htmlFor="input-available" className="form-label"><b>
                                 Available from</b></label>
                             <input type="text" className="form-control"
-                                id="input-available" value={`${assignment.available_date}`} />
+                                id="input-available" value={`${assignment.available_date}`}
+                                onChange={(e) => setAssignment({ ...assignment, available_date: e.target.value })
+                                } />
                         </div>
                         <div className="col-6 ">
                             <label htmlFor="input-until" className="form-label"><b>
                                 Until</b></label>
                             <input type="text" className="form-control"
-                                id="input-until"  />
+                            // add guts after making json have this.
+                            id="input-until"  />
                         </div>
                     </div>
                     
@@ -122,7 +165,7 @@ export default function AssignmentEditor() {
                         id="savebut" 
                         className="btn btn-md btn-danger me-1  
                         float-end" 
-                        onClick={() => window.location.hash = `#/Kanbas/Courses/${assignment.course}/Assignments/`}
+                            onClick={ handleSaveAssignment }
                         >
             Save
         </button>

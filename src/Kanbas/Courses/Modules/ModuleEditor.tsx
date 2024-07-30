@@ -1,5 +1,6 @@
 export default function ModuleEditor({ dialogTitle, moduleName, setModuleName, addModule }:
-  { dialogTitle: string; moduleName: string; setModuleName: (name: string) => void; addModule: () => void; }) {
+  { dialogTitle: string; moduleName: string; setModuleName: (name: string) => void; addModule: () => void; }
+) {
   return (
     <div id="wd-add-module-dialog" className="modal fade" data-bs-backdrop="static" data-bs-keyboard="false">
       <div className="modal-dialog">
