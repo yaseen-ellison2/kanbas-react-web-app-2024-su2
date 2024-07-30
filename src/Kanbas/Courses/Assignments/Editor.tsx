@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react"
 import { addAssignment, updateAssignment } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 
 
 export default function AssignmentEditor(
@@ -43,23 +42,19 @@ const [assignment, setAssignment] = useState<any>({
 
     return (
         <div>
-        {
-                assignments.filter((assignment: any) => assignment.course === cid && assignment._id === id)
-                .map((assignment: any) => (
         <div id="wd-assignments-editor">  
             <div className="mb-3">
                 <label htmlFor="input1" className="form-label">
                     Assignment Name</label>
                 <input type="text" className="form-control"
-                    id="input1" value={`${assignment._id}: ${assignment.title}`}
+                    id="input1" value={assignment.title}
                     onChange = {(e) => setAssignment({ ...assignment, title: e.target.value })} 
                     />
             </div>
 
             <textarea className="form-control" id="wd-description"
-                rows={5}>
-                {assignment.description}
-                </textarea>
+                    onChange={(e) => setAssignment({ ...assignment, description: e.target.value })} 
+                rows={5} value={assignment.description}/>
 
             <div className="row m-3">
                 <div className="col-4 ">
@@ -173,7 +168,6 @@ const [assignment, setAssignment] = useState<any>({
             Cancel
         </button>
         </div>
-    ))}
     </div>
     );
 }
