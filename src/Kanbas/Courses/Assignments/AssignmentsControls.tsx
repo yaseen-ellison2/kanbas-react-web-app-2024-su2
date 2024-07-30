@@ -49,12 +49,7 @@ export default function AssignmentsControls(
       <input type="text"
         placeholder="Search..."/><br />
       </button>
-      {/* <AssignmentEditor 
-      // dialogTitle="Add Module" 
-      // assignmentName={assignmentName}
-      // setAssignmentName={setAssignmentName} 
-      // addAssignment={addAssignment} 
-      /> */}
+      
     </div>
   );
 }

@@ -47,8 +47,12 @@ export default function Assignments() {
                             <a className="wd-assignment-link"
                                 href={`#/Kanbas/Courses/${assignment.course}/Assignments/${assignment._id}`}>
                                 {assignment._id} - {assignment.title} </a><br />
-                            Multiple Modules | <b>Not available until</b> May 6 at 12:00am | <br />
-                            <b>Due </b> May 13 at 11:59 pm | 100 points
+                            Multiple Modules | <b>Not available until</b> {new Date(assignment.available_date).toLocaleDateString("en-US", {
+                                year: 'numeric', month: 'long', day: 'numeric'
+                            })} | <br />
+                            <b>Due </b> {new Date(assignment.due_date).toLocaleDateString("en-US", {
+                                year: 'numeric', month: 'long', day: 'numeric'
+                            })} | {assignment.points} Points
                             <IndividualControls
                                 deleteAssignment={(assignmentId) => dispatch(deleteAssignment(assignmentId))}
                                 assignmentId={assignment._id} />

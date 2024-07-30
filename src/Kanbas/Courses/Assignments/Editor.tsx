@@ -17,8 +17,9 @@ const [assignment, setAssignment] = useState<any>({
     title: 'New Assignment', 
     description: "New Description",
     points: 100,
-    dueDate: new Date().toISOString().split("T")[0],
-    availableDate: new Date().toISOString().split("T")[0],
+    due_date: new Date().toISOString().split("T")[0],
+    available_date: new Date().toISOString().split("T")[0],
+    available_until_date: new Date().toISOString().split("T")[0],
   });
 
   const handleSaveAssignment = () => {
@@ -129,7 +130,7 @@ const [assignment, setAssignment] = useState<any>({
                     <div className="row-12 m-3">
                         <label htmlFor="input-due" className="form-label"><b>
                             Due</b></label>
-                        <input type="text" className="form-control"
+                        <input type="date" className="form-control"
                             id="input-due" value={`${assignment.due_date}`}
                             onChange={(e) => setAssignment({ ...assignment, due_date: e.target.value })
                             } />
@@ -138,7 +139,7 @@ const [assignment, setAssignment] = useState<any>({
                         <div className="col-6 ">
                             <label htmlFor="input-available" className="form-label"><b>
                                 Available from</b></label>
-                            <input type="text" className="form-control"
+                            <input type="date" className="form-control"
                                 id="input-available" value={`${assignment.available_date}`}
                                 onChange={(e) => setAssignment({ ...assignment, available_date: e.target.value })
                                 } />
@@ -146,9 +147,10 @@ const [assignment, setAssignment] = useState<any>({
                         <div className="col-6 ">
                             <label htmlFor="input-until" className="form-label"><b>
                                 Until</b></label>
-                            <input type="text" className="form-control"
-                            // add guts after making json have this.
-                            id="input-until"  />
+                            <input type="date" className="form-control"
+                                id="input-available" value={`${assignment.available_until_date}`}
+                                onChange={(e) => setAssignment({ ...assignment, available_until_date: e.target.value })
+                                } />
                         </div>
                     </div>
                     
@@ -164,7 +166,7 @@ const [assignment, setAssignment] = useState<any>({
                         >
             Save
         </button>
-        <button id="cancelbut" className="btn btn-md btn-secondary me-1 float-end"onClick={() => window.location.hash = `#/Kanbas/Courses/${assignment.course}/Assignments/`}>
+        <button id="cancelbut" className="btn btn-md btn-secondary me-1 float-end"onClick={() => window.location.hash = `#/Kanbas/Courses/${cid}/Assignments/`}>
             Cancel
         </button>
         </div>
