@@ -4,11 +4,13 @@ const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
 
 export default function WorkingWithObjects() {
 
-  const [assignment, setAssignment] = useState({
+  const [assignment, setAssignment] = useState(
+    {
     id: 1, title: "NodeJS Assignment",
     description: "Create a NodeJS server with ExpressJS",
     due: "2021-10-10", completed: false, score: 0,
-  });
+  }
+);
   
   const [module, setModule] = useState({
     id: 3,
@@ -42,6 +44,7 @@ export default function WorkingWithObjects() {
         Get Title
       </a>
       <hr />
+      
       <h4>Modifying Properties</h4>
       <a id="wd-update-assignment-title"
         className="btn btn-primary float-end"
@@ -52,6 +55,7 @@ export default function WorkingWithObjects() {
         value={assignment.title} onChange={(e) =>
           setAssignment({ ...assignment, title: e.target.value })} />
       <br />
+
       <a id="wd-update-assignment-score"
         className="btn btn-primary float-end"
         href={`${ASSIGNMENT_API_URL}/score/${assignment.score}`}>
@@ -60,8 +64,20 @@ export default function WorkingWithObjects() {
       <input className="form-control w-75" id="wd-assignment-score"
         value={assignment.score} onChange={(e) =>
           setAssignment({ ...assignment, score: parseInt(e.target.value) || 0 })} />
+      <br />
 
-      <br /><hr />
+      {/* Checkbox */}
+      <a id="wd-update-assignment-completed"
+        className="btn btn-primary float-end"
+        href={`${ASSIGNMENT_API_URL}/completed/${assignment.completed}`}>
+        Update Completed
+      </a>
+      <input type="checkbox" id="wd-assignment-completed"
+        checked={assignment.completed}
+        onChange={() => setAssignment({ ...assignment, completed: !assignment.completed })} /> Completed
+      <br /><br /><hr />
+
+
 
       <h4>Retrieving Objects (Module) </h4>
       <a id="wd-retrieve-module" className="btn btn-primary"
@@ -69,12 +85,14 @@ export default function WorkingWithObjects() {
         Get Module
       </a>
       <hr />
+
       <h4>Retrieving Properties (Module Name) </h4>
       <a id="wd-retrieve-module-name" className="btn btn-primary"
         href={`${REMOTE_SERVER}/lab5/module/name`}>
         Get Module Name
       </a>
       <hr />
+      
       <h4>Modifying Properties (Module Name) </h4>
       <a id="wd-update-module-name"
         className="btn btn-primary float-end"
@@ -84,7 +102,7 @@ export default function WorkingWithObjects() {
       <input className="form-control w-75" id="wd-module-name"
         value={module.name} onChange={(e) =>
           setModule({ ...module, name: e.target.value })} />
-      <hr />
+      <br />
 
       <a id="wd-update-module-description"
         className="btn btn-primary float-end"
