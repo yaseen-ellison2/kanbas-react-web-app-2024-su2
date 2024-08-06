@@ -1,14 +1,16 @@
 import { BsGripVertical } from "react-icons/bs";
 import { SlNotebook } from "react-icons/sl";
-import * as db from "../../Database";
+// import * as db from "../../Database";
 import { useParams } from "react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AssignmentsControls from "./AssignmentsControls";
 import AssignmentsControlButtons from "./AssignmentsControlButtons";
 import IndividualControls from "./IndividualControls";
-import { addAssignment, editAssignment, updateAssignment, deleteAssignment }
+import { deleteAssignment, setAssignments }
     from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
+import * as client from "./client";
+
 
 
 
@@ -24,6 +26,14 @@ export default function Assignments() {
     //         dispatch(deleteAssignment(assignment._id));
     //     }
     // }
+
+    const fetchAssignments = async () => {
+        const assignments = await client.findAssignmentsForCourse(cid as string);
+        dispatch(setAssignments(assignments));
+    };
+    useEffect(() => {
+        fetchAssignments();
+    }, []);
 
     return (
         <div id="wd-assignments" >
