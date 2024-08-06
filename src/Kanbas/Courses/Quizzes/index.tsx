@@ -1,17 +1,14 @@
-import { BsGripVertical } from "react-icons/bs";
 import { BsRocketTakeoff } from "react-icons/bs";
-import { SlNotebook } from "react-icons/sl";
-import * as db from "../../Database";
+import { RiArrowDownSFill } from "react-icons/ri";
 import { useParams } from "react-router";
 import { useState } from "react";
-// import QuizzesControls from "./QuizzesControls";
-// import QuizzesControlButtons from "./QuizzesControlButtons";
-// import IndividualControls from "./IndividualControls";
+import QuizzesControls from "./QuizzesControls";
 import { addQuiz, editQuiz, updateQuiz, deleteQuiz }
   from "./reducer";
 
 
 import { useSelector, useDispatch } from "react-redux";
+import IndividualControls from "./IndividualControls";
 
 
 
@@ -25,22 +22,21 @@ export default function Quizzes() {
 
   return (
     <div id="wd-quizzes" >
-      {/* <QuizzesControls
+      <QuizzesControls
         quizName="A101" quizId="24"
-      /> */}
+      />
       <br /><br /><br />
       <ul id="wd-quizzes" className="wd-quiz list-group-item p-0 mb-5 fs-5 border-gray">
         <div className="wd-title p-3 ps-2 bg-secondary">
-          <BsGripVertical className="me-2 fs-3" />
+          <RiArrowDownSFill className="me-2 fs-3" />
           Assignment Quizzes
-          {/* <QuizzesControlButtons /> */}
         </div>
 
         {quizzes
           .filter((quiz: any) => quiz.course === cid)
           .map((quiz: any) => (
-            <li className="wd-lesson list-group-item p-3 ps-1">
-              <BsRocketTakeoff className="me-2 fs-3" />
+            <li className="wd-lesson list-group-item p-3 ps-2">
+              <BsRocketTakeoff className="me-2 fs-3 " />
               <a className="wd-quiz-link"
                 href={`#/Kanbas/Courses/${quiz.course}/Quizzes/${quiz._id}`}>
                 {quiz._id} - {quiz.title} </a><br />
@@ -50,9 +46,10 @@ export default function Quizzes() {
               <b>Due </b> {new Date(quiz.due_date).toLocaleDateString("en-US", {
                 year: 'numeric', month: 'long', day: 'numeric'
               })} | {quiz.points} Points
-              {/* <IndividualControls
+              <IndividualControls 
                 deleteQuiz={(quizId) => dispatch(deleteQuiz(quizId))}
-                quizId={quiz._id} /> */}
+                quizId={quiz._id}  />
+            <hr/>
             </li>
           ))}
       </ul>

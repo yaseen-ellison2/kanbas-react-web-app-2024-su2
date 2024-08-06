@@ -1,192 +1,762 @@
 [
   {
-    "_id": "Q101",
-    "title": "Propulsion Systems Quiz",
-    "course": "RS101",
-    "description": "Test your knowledge on various propulsion systems used in modern spacecraft.",
-    "points": 50,
-    "due_date": "2024-08-08",
-    "available_date": "2024-07-25",
-    "available_until_date": "2024-08-08"
+    "_id" : "Q101",
+    "title" : "Propulsion Systems Quiz",
+    "course" : "RS101",
+    "description" : "Test your knowledge on various propulsion systems used in modern spacecraft.",
+    "points" : 50,
+    "due_date" : "2024-08-08",
+    "available_date" : "2024-07-25",
+    "available_until_date" : "2024-08-08",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q101"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q101"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "Q101"
+      }
+    ]
   },
   {
-    "_id": "Q102",
-    "title": "Combustion Processes Quiz",
-    "course": "RS101",
-    "description": "A quiz on the fundamentals of combustion processes in rocket engines.",
-    "points": 40,
-    "due_date": "2024-08-15",
-    "available_date": "2024-08-01",
-    "available_until_date": "2024-08-15"
+    "_id" : "Q102",
+    "title" : "Combustion Processes Quiz",
+    "course" : "RS101",
+    "description" : "A quiz on the fundamentals of combustion processes in rocket engines.",
+    "points" : 40,
+    "due_date" : "2024-08-15",
+    "available_date" : "2024-08-01",
+    "available_until_date" : "2024-08-15",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q102"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q102"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "description" : "Overview of different types of rocket engines.",
+        "quiz" : "Q102"
+      }
+    ]
   },
   {
-    "_id": "E101",
-    "title": "Rocket Propulsion Midterm Exam",
-    "course": "RS101",
-    "description": "Midterm exam covering the key concepts in rocket propulsion.",
-    "points": 100,
-    "due_date": "2024-09-05",
-    "available_date": "2024-08-22",
-    "available_until_date": "2024-09-05"
+    "_id" : "E101",
+    "title" : "Rocket Propulsion Midterm Exam",
+    "course" : "RS101",
+    "description" : "Midterm exam covering the key concepts in rocket propulsion.",
+    "points" : 100,
+    "due_date" : "2024-09-05",
+    "available_date" : "2024-08-22",
+    "available_until_date" : "2024-09-05",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "E101"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "E101"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "E101"
+      }
+    ]
   },
   {
-    "_id": "Q201",
-    "title": "Basic Aerodynamics Quiz",
-    "course": "RS102",
-    "description": "A quiz on basic aerodynamics principles.",
-    "points": 30,
-    "due_date": "2024-07-29",
-    "available_date": "2024-07-22",
-    "available_until_date": "2024-07-29"
+    "_id" : "Q201",
+    "title" : "Basic Aerodynamics Quiz",
+    "course" : "RS102",
+    "description" : "A quiz on basic aerodynamics principles.",
+    "points" : 30,
+    "due_date" : "2024-07-29",
+    "available_date" : "2024-07-22",
+    "available_until_date" : "2024-07-29",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q201"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q201"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "Q201"
+      }
+    ]
   },
   {
-    "_id": "Q202",
-    "title": "Fluid Flow Quiz",
-    "course": "RS102",
-    "description": "Test your understanding of different types of fluid flow.",
-    "points": 40,
-    "due_date": "2024-08-05",
-    "available_date": "2024-07-29",
-    "available_until_date": "2024-08-05"
+    "_id" : "Q202",
+    "title" : "Fluid Flow Quiz",
+    "course" : "RS102",
+    "description" : "Test your understanding of different types of fluid flow.",
+    "points" : 40,
+    "due_date" : "2024-08-05",
+    "available_date" : "2024-07-29",
+    "available_until_date" : "2024-08-05",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q202"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q202"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "Q202"
+      }
+    ]
   },
   {
-    "_id": "E201",
-    "title": "Aerodynamics Final Exam",
-    "course": "RS102",
-    "description": "Comprehensive exam on aerodynamics principles and fluid flow analysis.",
-    "points": 150,
-    "due_date": "2024-09-19",
-    "available_date": "2024-09-05",
-    "available_until_date": "2024-09-19"
+    "_id" : "E201",
+    "title" : "Aerodynamics Final Exam",
+    "course" : "RS102",
+    "description" : "Comprehensive exam on aerodynamics principles and fluid flow analysis.",
+    "points" : 150,
+    "due_date" : "2024-09-19",
+    "available_date" : "2024-09-05",
+    "available_until_date" : "2024-09-19",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "E201"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "E201"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "E201"
+      }
+    ]
   },
   {
-    "_id": "Q301",
-    "title": "Structural Components Quiz",
-    "course": "RS103",
-    "description": "Quiz on the basics of structural design for spacecraft.",
-    "points": 40,
-    "due_date": "2024-08-19",
-    "available_date": "2024-08-12",
-    "available_until_date": "2024-08-19"
+    "_id" : "Q301",
+    "title" : "Structural Components Quiz",
+    "course" : "RS103",
+    "description" : "Quiz on the basics of structural design for spacecraft.",
+    "points" : 40,
+    "due_date" : "2024-08-19",
+    "available_date" : "2024-08-12",
+    "available_until_date" : "2024-08-19",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q301"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q301"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "Q301"
+      }
+    ]
   },
   {
-    "_id": "Q302",
-    "title": "Orbital Mechanics Quiz",
-    "course": "RS103",
-    "description": "Test your knowledge on calculating satellite orbits.",
-    "points": 50,
-    "due_date": "2024-08-26",
-    "available_date": "2024-08-19",
-    "available_until_date": "2024-08-26"
+    "_id" : "Q302",
+    "title" : "Orbital Mechanics Quiz",
+    "course" : "RS103",
+    "description" : "Test your knowledge on calculating satellite orbits.",
+    "points" : 50,
+    "due_date" : "2024-08-26",
+    "available_date" : "2024-08-19",
+    "available_until_date" : "2024-08-26",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q302"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q302"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "Q302"
+      }
+    ]
   },
   {
-    "_id": "E301",
-    "title": "Systems Engineering Final Exam",
-    "course": "RS103",
-    "description": "Final exam covering systems engineering principles.",
-    "points": 200,
-    "due_date": "2024-10-10",
-    "available_date": "2024-08-26",
-    "available_until_date": "2024-10-10"
+    "_id" : "E301",
+    "title" : "Systems Engineering Final Exam",
+    "course" : "RS103",
+    "description" : "Final exam covering systems engineering principles.",
+    "points" : 200,
+    "due_date" : "2024-10-10",
+    "available_date" : "2024-08-26",
+    "available_until_date" : "2024-10-10",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "E301"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "E301"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "E301"
+      }
+    ]
   },
   {
-    "_id": "Q401",
-    "title": "Coordination Chemistry Quiz",
-    "course": "RS105",
-    "description": "Test your knowledge on the structures and properties of coordination compounds.",
-    "points": 50,
-    "due_date": "2023-02-01",
-    "available_date": "2023-01-15",
-    "available_until_date": "2023-02-01"
+    "_id" : "Q401",
+    "title" : "Coordination Chemistry Quiz",
+    "course" : "RS105",
+    "description" : "Test your knowledge on the structures and properties of coordination compounds.",
+    "points" : 50,
+    "due_date" : "2023-02-01",
+    "available_date" : "2023-01-15",
+    "available_until_date" : "2023-02-01",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q401"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q401"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "Q401"
+      }
+    ]
   },
   {
-    "_id": "E401",
-    "title": "Coordination Chemistry Midterm Exam",
-    "course": "RS105",
-    "description": "Midterm exam covering the analysis and synthesis of metal complexes.",
-    "points": 150,
-    "due_date": "2023-03-15",
-    "available_date": "2023-02-01",
-    "available_until_date": "2023-03-15"
+    "_id" : "E401",
+    "title" : "Coordination Chemistry Midterm Exam",
+    "course" : "RS105",
+    "description" : "Midterm exam covering the analysis and synthesis of metal complexes.",
+    "points" : 150,
+    "due_date" : "2023-03-15",
+    "available_date" : "2023-02-01",
+    "available_until_date" : "2023-03-15",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "E401"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "E401"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "E401"
+      }
+    ]
   },
   {
-    "_id": "Q501",
-    "title": "Magical Artifacts Quiz",
-    "course": "RS109",
-    "description": "Quiz on the significance of magical artifacts like the Rings of Power.",
-    "points": 40,
-    "due_date": "2023-02-15",
-    "available_date": "2023-02-01",
-    "available_until_date": "2023-02-15"
+    "_id" : "Q501",
+    "title" : "Magical Artifacts Quiz",
+    "course" : "RS109",
+    "description" : "Quiz on the significance of magical artifacts like the Rings of Power.",
+    "points" : 40,
+    "due_date" : "2023-02-15",
+    "available_date" : "2023-02-01",
+    "available_until_date" : "2023-02-15",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q501"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q501"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "Q501"
+      }
+    ]
   },
   {
-    "_id": "E501",
-    "title": "Middle-earth Ethics Exam",
-    "course": "RS109",
-    "description": "Final exam discussing the ethical implications of magic use in Middle-earth.",
-    "points": 120,
-    "due_date": "2023-04-10",
-    "available_date": "2023-02-20",
-    "available_until_date": "2023-04-10"
+    "_id" : "E501",
+    "title" : "Middle-earth Ethics Exam",
+    "course" : "RS109",
+    "description" : "Final exam discussing the ethical implications of magic use in Middle-earth.",
+    "points" : 120,
+    "due_date" : "2023-04-10",
+    "available_date" : "2023-02-20",
+    "available_until_date" : "2023-04-10",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "E501"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "E501"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "E501"
+      }
+    ]
   },
   {
-    "_id": "Q601",
-    "title": "Divine Love Quiz",
-    "course": "RS116",
-    "description": "Quiz on Rumi's teachings on divine love and its impact on Sufism.",
-    "points": 40,
-    "due_date": "2023-01-25",
-    "available_date": "2023-01-12",
-    "available_until_date": "2023-01-25"
+    "_id" : "Q601",
+    "title" : "Divine Love Quiz",
+    "course" : "RS116",
+    "description" : "Quiz on Rumi's teachings on divine love and its impact on Sufism.",
+    "points" : 40,
+    "due_date" : "2023-01-25",
+    "available_date" : "2023-01-12",
+    "available_until_date" : "2023-01-25",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q601"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q601"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "Q601"
+      }
+    ]
   },
   {
-    "_id": "E601",
-    "title": "Sufism Final Exam",
-    "course": "RS116",
-    "description": "Final exam analyzing the significance of various Sufi rituals and their spiritual meanings.",
-    "points": 140,
-    "due_date": "2023-04-05",
-    "available_date": "2023-02-25",
-    "available_until_date": "2023-04-05"
+    "_id" : "E601",
+    "title" : "Sufism Final Exam",
+    "course" : "RS116",
+    "description" : "Final exam analyzing the significance of various Sufi rituals and their spiritual meanings.",
+    "points" : 140,
+    "due_date" : "2023-04-05",
+    "available_date" : "2023-02-25",
+    "available_until_date" : "2023-04-05",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "E601"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "E601"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "E601"
+      }
+    ]
   },
   {
-    "_id": "Q701",
-    "title": "Mystical Experiences Quiz",
-    "course": "RS118",
-    "description": "Quiz on the nature and significance of mystical experiences in Islamic esotericism.",
-    "points": 50,
-    "due_date": "2023-02-01",
-    "available_date": "2023-01-14",
-    "available_until_date": "2023-02-01"
+    "_id" : "Q701",
+    "title" : "Mystical Experiences Quiz",
+    "course" : "RS118",
+    "description" : "Quiz on the nature and significance of mystical experiences in Islamic esotericism.",
+    "points" : 50,
+    "due_date" : "2023-02-01",
+    "available_date" : "2023-01-14",
+    "available_until_date" : "2023-02-01",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q701"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q701"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "Q701"
+      }
+    ]
   },
   {
-    "_id": "E701",
-    "title": "Islamic Mysticism Final Exam",
-    "course": "RS118",
-    "description": "Final exam analyzing the spiritual symbolism present in key Islamic texts.",
-    "points": 150,
-    "due_date": "2023-04-08",
-    "available_date": "2023-02-18",
-    "available_until_date": "2023-04-08"
+    "_id" : "E701",
+    "title" : "Islamic Mysticism Final Exam",
+    "course" : "RS118",
+    "description" : "Final exam analyzing the spiritual symbolism present in key Islamic texts.",
+    "points" : 150,
+    "due_date" : "2023-04-08",
+    "available_date" : "2023-02-18",
+    "available_until_date" : "2023-04-08",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "E701"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "E701"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "E701"
+      }
+    ]
   },
   {
-    "_id": "Q801",
-    "title": "Ancient Chinese Water Management Quiz",
-    "course": "RS119",
-    "description": "Quiz on the techniques of water management used in ancient China.",
-    "points": 40,
-    "due_date": "2023-02-01",
-    "available_date": "2023-01-11",
-    "available_until_date": "2023-02-01"
+    "_id" : "Q801",
+    "title" : "Ancient Chinese Water Management Quiz",
+    "course" : "RS119",
+    "description" : "Quiz on the techniques of water management used in ancient China.",
+    "points" : 40,
+    "due_date" : "2023-02-01",
+    "available_date" : "2023-01-11",
+    "available_until_date" : "2023-02-01",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "Q801"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "Q801"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "Q801"
+      }
+    ]
   },
   {
-    "_id": "E801",
-    "title": "Environmental Philosophies Exam",
-    "course": "RS119",
-    "description": "Final exam discussing the environmental philosophies prevalent in ancient Chinese culture.",
-    "points": 140,
-    "due_date": "2023-04-02",
-    "available_date": "2023-02-20",
-    "available_until_date": "2023-04-02"
+    "_id" : "E801",
+    "title" : "Environmental Philosophies Exam",
+    "course" : "RS119",
+    "description" : "Final exam discussing the environmental philosophies prevalent in ancient Chinese culture.",
+    "points" : 140,
+    "due_date" : "2023-04-02",
+    "available_date" : "2023-02-20",
+    "available_until_date" : "2023-04-02",
+    "quiz_type" : "Graded Quiz",
+    "assignment_group" : "Quiz",
+    "shuffle_answers" : "True",
+    "time_limit" : "20",
+    "multiple_attempts" : "False",
+    "show_correct" : "False",
+    "access_code" : "abc123",
+    "one_q_at_a_time" : "False",
+    "webcam_required" : "False",
+    "lock_q_after_answer" : "False",
+    "questions" : [
+      {
+        "_id" : "qq101",
+        "question" : "What is the Problem",
+        "answer" : "A brief history of rocketry and space exploration.",
+        "quiz" : "E801"
+      },
+      {
+        "_id" : "qq102",
+        "name" : "Rocket Propulsion Fundamentals",
+        "answer" : "Basic principles of rocket propulsion.",
+        "quiz" : "E801"
+      },
+      {
+        "_id" : "qq103",
+        "name" : "Rocket Engine Types",
+        "answer" : "Overview of different types of rocket engines.",
+        "quiz" : "E801"
+      }
+    ]
   }
 ]
