@@ -35,6 +35,11 @@ export default function Assignments() {
         fetchAssignments();
     }, []);
 
+    const removeAssignment = async (assignmentId: string) => {
+        await client.deleteAssignment(assignmentId);
+        dispatch(deleteAssignment(assignmentId));
+    };
+
     return (
         <div id="wd-assignments" >
             <AssignmentsControls 
@@ -64,7 +69,7 @@ export default function Assignments() {
                                 year: 'numeric', month: 'long', day: 'numeric'
                             })} | {assignment.points} Points
                             <IndividualControls
-                                deleteAssignment={(assignmentId) => dispatch(deleteAssignment(assignmentId))}
+                                deleteAssignment={removeAssignment}
                                 assignmentId={assignment._id} />
                         </li> 
                 ))}

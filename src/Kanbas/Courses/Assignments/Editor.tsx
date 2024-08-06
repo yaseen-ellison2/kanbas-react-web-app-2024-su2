@@ -29,10 +29,6 @@ const createAssignment = async (assignment: any) => {
     dispatch(addAssignment(newAssignment));
 };
 
-// const removeAssignment = async (assignmentId: string) => {
-//     await client.deleteAssignment(assignmentId);
-//     dispatch(deleteAssignment(assignmentId));
-// };
 
 const saveAssignment = async (assignment: any) => {
     const status = await client.updateAssignment(assignment);
@@ -63,7 +59,7 @@ const [assignment, setAssignment] = useState<any>({
     if (id !== 'New') { //check if id != New
       const current = assignments.find((assignment: any) =>
         assignment._id === id); //find correct assignment to update via matching id
-      setAssignment(current)                                                    
+      setAssignments(current)                                                    
       //set state of found assignment                     
     }}, [id]) 
 
