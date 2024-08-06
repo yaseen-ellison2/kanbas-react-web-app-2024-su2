@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react"
-import { setAssignments, addAssignment, updateAssignment, deleteAssignment } from "./reducer";
+import {  addAssignment, updateAssignment, deleteAssignment } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
 import * as client from "./client";
 
@@ -10,19 +10,12 @@ export default function AssignmentEditor(
 ) {
 
 const { cid, id  } = useParams();
-const [assignmentName, setAssignmentName] = useState("");
+
 const { assignments } = useSelector((state: any) => state.assignmentsReducer);
                                         
 const navigate = useNavigate(); 
 const dispatch = useDispatch();
 
-const fetchAssignments = async () => {
-    const assignments = await client.findAssignmentsForCourse(cid as string);
-    dispatch(setAssignments(assignments));
-  };
-  useEffect(() => {
-    fetchAssignments();
-  }, []);
 
 const createAssignment = async (assignment: any) => {
     const newAssignment = await client.createAssignment(cid as string, assignment);
@@ -47,9 +40,9 @@ const [assignment, setAssignment] = useState<any>({
 
   const handleSaveAssignment = () => {
     if (id !== 'New') {
-        saveAssignment({ title: assignmentName, course: cid });
+        saveAssignment(assignment);
     } else {
-        createAssignment({ title: assignmentName, course: cid });
+        createAssignment({ ...assignment, course: cid });
     }
       navigate(`/Kanbas/Courses/${cid}/Assignments`);}
 
@@ -59,7 +52,7 @@ const [assignment, setAssignment] = useState<any>({
     if (id !== 'New') { //check if id != New
       const current = assignments.find((assignment: any) =>
         assignment._id === id); //find correct assignment to update via matching id
-      setAssignments(current)                                                    
+      setAssignment(current)                                                    
       //set state of found assignment                     
     }}, [id]) 
 
