@@ -110,6 +110,7 @@ export default function QuizDetailsEditor(
             <select className="form-select">
               <option selected>ASSIGNMENTS</option>
               <option value="OTHER">Other</option>
+              
             </select>
           </div>
         </div>
@@ -124,7 +125,7 @@ export default function QuizDetailsEditor(
             </select>
           </div>
         </div>
-        <div className="row m-3">
+        {/* <div className="row m-3">
           <div className="col-4">
             <a>Submission Type</a>
           </div>
@@ -148,7 +149,8 @@ export default function QuizDetailsEditor(
               <label htmlFor="wd-file-upload">File Upload</label><br /><br />
             </div>
           </div>
-        </div>
+        </div> */}
+        
         <div className="row m-3">
           <div className="col-4 ">
             <a>Assign</a>
