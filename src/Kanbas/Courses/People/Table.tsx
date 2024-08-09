@@ -23,6 +23,7 @@ export default function PeopleTable() {
       firstName: "New",
       lastName: `User${users.length + 1}`,
       username: `newuser${Date.now()}`,
+      email:`newuser${Date.now()}@example.com`,
       password: "password123",
       section: "S101",
       role: "STUDENT",
