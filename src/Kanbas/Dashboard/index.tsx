@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import ProtectedContent from "../Account/ProtectedContent";
 
 export default function Dashboard({ 
   courses, 
@@ -13,10 +15,15 @@ export default function Dashboard({
   updateCourse: () => void; 
 }) {
 
+//take notes, this how to use current user in a nother jawn w an import and a const
+  const {currentUser} = useSelector((state:any) => state.accountReducer);
+
   return (
       <div id="wd-dashboard">
-        <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
-
+      {/* below, we use <> { && etc} to render if exists, an alternate is to put a question mark, but this will show a blank parenthesis*/} 
+      <h1 id="wd-dashboard-title">Dashboard {currentUser && <>({currentUser.username})</>} </h1> <hr /> 
+<ProtectedContent>
+  {/* protectedcontent will be moot since im protecting the route, but this how she works.  */}
       <h5>New Course
         <button className="btn btn-primary float-end"
           id="wd-add-new-course-click"
@@ -33,6 +40,8 @@ export default function Dashboard({
       onChange={(e) => setCourse({ ...course, name: e.target.value })} />
       <textarea value={course.description} className="form-control" 
       onChange={(e) => setCourse({ ...course, description: e.target.value })} /><hr />
+</ProtectedContent>
+
 
         <h2 id="wd-dashboard-published">Published Courses ({courses.length})</h2> <hr />
         <div id="wd-dashboard-courses" className="row">
