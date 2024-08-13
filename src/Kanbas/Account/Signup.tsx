@@ -25,7 +25,7 @@ export default function Signup() {
       <h1>Sign up</h1>
       {error && <div className="wd-error alert alert-danger">{error}</div>}
 
-      <input value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value })}
+      <input value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value, email: e.target.value })}
         className="wd-username form-control mb-2" placeholder="username" />
       <input value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} type="password"
         className="wd-password form-control mb-2" placeholder="password" />

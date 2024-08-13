@@ -13,7 +13,7 @@ export default function CoursesNavigation() {
             {links.map((link) => (
                 <Link
                     key={link}
-                    to={`/Kanbas/Courses/${course?._id}/${link}`}
+                    to={`/Kanbas/Courses/${cid}/${link}`}
                     className={`list-group-item border border-0 ${pathname.includes(link) ? "active" : "text-danger"}`}
                 >
                     {link}
