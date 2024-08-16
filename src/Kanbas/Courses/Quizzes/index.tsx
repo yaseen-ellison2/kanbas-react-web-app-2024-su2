@@ -33,7 +33,7 @@ export default function Quizzes() {
     fetchQuizzes();
   }, []);
 
-// i think here we have already found each quiz by course, maybe now we use below for user. NVM 
+// i think here we have already found each quiz by course, the below is redundant. its harmless rn so ill leave it be. can clean up after
 
 
   return (
