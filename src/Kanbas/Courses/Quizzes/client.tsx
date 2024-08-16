@@ -19,7 +19,7 @@ export const findQuizzesForCourse = async (cid: string) => {
   return response.data;
 };
 
-export const createQuiz = async (cid: string, quiz: any) => {
+export const createQuiz = async (cid: any, quiz: any) => {
   const response = await axios.post(`${COURSES_API}/${cid}/quizzes`, quiz);
   return response.data;
 };

@@ -4,13 +4,14 @@ import { addQuiz, updateQuiz } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
 import * as client from "./client";
 
-import { quizzes } from "../../Database";
+//import { quizzes } from "../../Database";
 
 export default function QuizDetailsEditor(
 ) {
 
   const { cid, qid } = useParams();
-  //const { quizzes } = useSelector((state: any) => state.quizzesReducer);
+
+  const { quizzes } = useSelector((state: any) => state.quizzesReducer);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -22,8 +23,8 @@ export default function QuizDetailsEditor(
     due_date: new Date().toISOString().split("T")[0],
     available_date: new Date().toISOString().split("T")[0],
     available_until_date: new Date().toISOString().split("T")[0],
-    quiz_type: "Graded Quiz",
-    assignment_group: "Quiz",
+    quiz_type: "GRADED_QUIZ",
+    assignment_group: "QUIZ",
     shuffle_answers: "True",
     time_limit: "20",
     multiple_attempts: "False",
@@ -41,27 +42,48 @@ export default function QuizDetailsEditor(
     },
     {
       "_id": "qq102",
-      "name": "Rocket Propulsion Fundamentals",
-      "answer": "Basic principles of rocket propulsion.",
+      "question": "Random Question 2",
+      "answer": "Random Answer 2",
       "quiz": "Q101"
     },
     {
       "_id": "qq103",
-      "name": "Rocket Engine Types",
-      "answer": "Overview of different types of rocket engines.",
+      "question": "Random Question 3",
+      "answer": "Random Answer 3",
       "quiz": "Q101"
     }
   ]
   });
 
-  const handleSaveQuiz = () => {
-    if (qid !== 'New') {
-      dispatch(updateQuiz(quiz));
-    } else {
-      dispatch(addQuiz({ ...quiz, course: cid }))
+  // const handleSaveQuiz = async () => {
+  //   if (qid !== 'New') {
+  //     const status = await client.updateQuiz(quiz);
+  //     dispatch(updateQuiz(quiz));
+  //   } else {
+  //     await client.createQuiz(cid, quiz);
+  //     dispatch(addQuiz({ ...quiz, course: cid }));
+  //   }
+  //   navigate(`/Kanbas/Courses/${cid}/Quizzes`);
+  // }
+
+  const handleSaveQuiz = async () => {
+    try {
+      if (qid !== 'New') {
+        // Handle updating an existing quiz
+        const status = await client.updateQuiz(quiz); // API call to update quiz
+        dispatch(updateQuiz(quiz)); // Update Redux store with updated quiz
+      } else {
+        // Handle creating a new quiz
+        await client.createQuiz(cid, quiz); // API call to create new quiz
+        dispatch(addQuiz({ ...quiz, course: cid })); // Add new quiz to Redux store
+      }
+      navigate(`/Kanbas/Courses/${cid}/Quizzes`); // Navigate back to quizzes list
+    } catch (error) {
+      console.error('Failed to save the quiz:', error); // Log the error
+      // Optionally, show an error message to the user
     }
-    navigate(`/Kanbas/Courses/${cid}/Quizzes`);
-  }
+  };
+
 
 
   //useEffect Hook: fetch quiz if editing
