@@ -1,13 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { quizzes } from "../../Database";
+//import { quizzes } from "../../Database";
 
 
 const initialState = {
-  quizzes: quizzes,
+  quizzes: [],
 };
 
 const quizzesSlice = createSlice({
   name: "quizzes",
+  
   initialState,
   reducers: {
     addQuiz: (state, { payload: quiz }) => {

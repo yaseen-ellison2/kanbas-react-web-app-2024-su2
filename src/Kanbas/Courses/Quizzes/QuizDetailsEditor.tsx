@@ -2,13 +2,15 @@ import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react"
 import { addQuiz, updateQuiz } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
+import * as client from "./client";
 
+import { quizzes } from "../../Database";
 
 export default function QuizDetailsEditor(
 ) {
 
   const { cid, qid } = useParams();
-  const { quizzes } = useSelector((state: any) => state.quizzesReducer);
+  //const { quizzes } = useSelector((state: any) => state.quizzesReducer);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();

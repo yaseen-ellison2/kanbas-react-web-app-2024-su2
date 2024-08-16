@@ -3,9 +3,10 @@ import { RiArrowDownSFill } from "react-icons/ri";
 import { useParams } from "react-router";
 import { useState } from "react";
 import QuizzesControls from "./QuizzesControls";
-import { addQuiz, editQuiz, updateQuiz, deleteQuiz }
+import { deleteQuiz }
   from "./reducer";
-
+//import * as client from "./client";
+// stopped at this point, client reducer etc set up, need to reference them in Quizzes. 
 
 import { useSelector, useDispatch } from "react-redux";
 import IndividualControls from "./IndividualControls";
