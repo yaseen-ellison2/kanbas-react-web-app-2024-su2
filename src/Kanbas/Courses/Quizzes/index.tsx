@@ -1,11 +1,12 @@
 import { BsRocketTakeoff } from "react-icons/bs";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { useParams } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import QuizzesControls from "./QuizzesControls";
-import { deleteQuiz }
+import { deleteQuiz, setQuizzes }
   from "./reducer";
-//import * as client from "./client";
+import * as client from "./client";
+
 // stopped at this point, client reducer etc set up, need to reference them in Quizzes. 
 
 import { useSelector, useDispatch } from "react-redux";
@@ -14,11 +15,25 @@ import IndividualControls from "./IndividualControls";
 
 
 export default function Quizzes() {
-  const { cid } = useParams();
-  
 
+  const { cid } = useParams();
   const { quizzes } = useSelector((state: any) => state.quizzesReducer);
   const dispatch = useDispatch();
+
+  const removeQuiz = async (qid: string) => {
+    await client.deleteQuiz(qid);
+    dispatch(deleteQuiz(qid));
+  };
+
+  const fetchQuizzes = async () => {
+    const quizzes = await client.findQuizzesForCourse(cid as string);
+    dispatch(setQuizzes(quizzes));
+  };
+  useEffect(() => {
+    fetchQuizzes();
+  }, []);
+
+// i think here we have already found each quiz by course, maybe now we use below for user. NVM 
 
 
   return (
@@ -48,7 +63,8 @@ export default function Quizzes() {
                 year: 'numeric', month: 'long', day: 'numeric'
               })} | {quiz.points} Points
               <IndividualControls 
-                deleteQuiz={(quizId) => dispatch(deleteQuiz(quizId))}
+                deleteQuiz={(quizId) => 
+                  {removeQuiz(quizId)}}
                 quizId={quiz._id}  />
             <hr/>
             </li>

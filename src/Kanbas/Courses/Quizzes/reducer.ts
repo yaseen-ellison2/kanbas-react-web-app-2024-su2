@@ -11,6 +11,9 @@ const quizzesSlice = createSlice({
   
   initialState,
   reducers: {
+    setQuizzes: (state, action) => {
+      state.quizzes = action.payload;
+    },
     addQuiz: (state, { payload: quiz }) => {
       //TA has this commented out.
       const newQuiz: any = {
@@ -42,6 +45,6 @@ const quizzesSlice = createSlice({
     },
   },
 });
-export const { addQuiz, deleteQuiz, updateQuiz, editQuiz } =
+export const { addQuiz, deleteQuiz, updateQuiz, editQuiz, setQuizzes } =
   quizzesSlice.actions;
 export default quizzesSlice.reducer;

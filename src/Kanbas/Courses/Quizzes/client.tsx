@@ -13,7 +13,7 @@ export const deleteQuiz = async (qid: string) => {
   return response.data;
 };
 
-export const findQuizzessForCourse = async (cid: string) => {
+export const findQuizzesForCourse = async (cid: string) => {
   const response = await axios
     .get(`${COURSES_API}/${cid}/quizzes`);
   return response.data;
