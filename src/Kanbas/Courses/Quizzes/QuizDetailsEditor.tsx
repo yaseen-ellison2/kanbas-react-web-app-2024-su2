@@ -18,6 +18,7 @@ export default function QuizDetailsEditor(
 
   const [quiz, setQuiz] = useState<any>({
     title: 'New Quiz',
+    course: cid,
     description: "New Description",
     points: 100,
     due_date: new Date().toISOString().split("T")[0],

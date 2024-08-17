@@ -32,7 +32,7 @@ export default function Modules() {
         const newModule = await client.createModule(cid as string, module);
         dispatch(addModule(newModule));
     };
-    const removeModule = async (moduleId: string) => {
+    const removeModule = async (moduleId: any) => {
         await client.deleteModule(moduleId);
         dispatch(deleteModule(moduleId));
     };

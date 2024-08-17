@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import ProtectedContent from "../Account/ProtectedContent";
+import { addEnrollment, setEnrollments } from "../Enrollment/reducer";
+import * as client from "../Enrollment/client";
+
+import { useSelector, useDispatch } from "react-redux";
+
+
+
 
 export default function Dashboard({ 
   courses, 
@@ -15,19 +21,65 @@ export default function Dashboard({
   updateCourse: () => void; 
 }) {
 
-//take notes, this how to use current user in a nother jawn w an import and a const
-  const {currentUser} = useSelector((state:any) => state.accountReducer);
+const dispatch = useDispatch();
+
+//take notes, this how to use current user in another jawn w an import and a const
+const {currentUser} = useSelector((state:any) => state.accountReducer);
+
+
+
+const enrollments = useSelector((state: any) => state.enrollmentReducer.enrollments);
+
+//Fetch enrollments when the component mounts
+  
+useEffect(() => {
+    if (currentUser) {
+      const fetchEnrollments = async () => {
+        const userEnrollments = await client.findEnrollmentsForUser(currentUser._id);
+        dispatch(setEnrollments(userEnrollments));
+      };
+      fetchEnrollments();
+    }
+  }, [currentUser, dispatch]);
+
+  const enrolledCourses = courses.filter(course =>
+    enrollments.some((enrollment: { course: any; }) => enrollment.course === course._id)
+  );
+
 
   return (
       <div id="wd-dashboard">
       {/* below, we use <> { && etc} to render if exists, an alternate is to put a question mark, but this will show a blank parenthesis*/} 
-      <h1 id="wd-dashboard-title">Dashboard {currentUser && <>({currentUser.username})</>} </h1> <hr /> 
+      <h1 id="wd-dashboard-title">Dashboard {currentUser && <>({currentUser.username})</>} </h1> <hr />
+   
 <ProtectedContent>
   {/* protectedcontent will be moot since im protecting the route, but this how she works.  */}
       <h5>New Course
-        <button className="btn btn-primary float-end"
+        {/* <button className="btn btn-primary float-end"
           id="wd-add-new-course-click"
-          onClick={addNewCourse} > Add </button>
+          onClick={addNewCourse} > Add </button> */}
+          <button
+            className="btn btn-primary float-end"
+            id="wd-add-new-course-click"
+            onClick={async () => {
+              await addNewCourse();  // Call the existing function to add a course
+
+              // Logic to add an enrollment after the course is added
+              if (course && course._id && currentUser) {  // Ensure the course and user are available
+                const enrollment = {
+                  user: currentUser._id,
+                  course: course._id,
+                };
+                try {
+                  await client.createEnrollment(currentUser._id, enrollment);
+                  // Optionally, update the enrollments state or handle success UI feedback
+                  dispatch(addEnrollment(enrollment));
+                } catch (error) {
+                  console.error("Error creating enrollment:", error);
+                }}}}>
+            Add
+          </button>
+
 
         <button className="btn btn-warning float-end me-2"
           onClick={updateCourse} id="wd-update-course-click">
@@ -42,11 +94,10 @@ export default function Dashboard({
       onChange={(e) => setCourse({ ...course, description: e.target.value })} /><hr />
 </ProtectedContent>
 
-
         <h2 id="wd-dashboard-published">Published Courses ({courses.length})</h2> <hr />
         <div id="wd-dashboard-courses" className="row">
           <div className="row row-cols-1 row-cols-md-5 g-4">
-              {courses.map((course) => (
+              {enrolledCourses.map((course) => (
                 <div className="wd-dashboard-course col" style={{ width: "300px" }}>
                   <Link to={`/Kanbas/Courses/${course._id}/Home`} className="text-decoration-none" >
                       <div className="card rounded-3 overflow-hidden">

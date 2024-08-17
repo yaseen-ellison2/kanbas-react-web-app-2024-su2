@@ -6,8 +6,8 @@ import { FaPencil } from "react-icons/fa6";
 
 
 export default function ModuleControlButtons(
-  { moduleId, deleteModule, editModule }: { moduleId: string; deleteModule: (moduleId: string) => void;
-  editModule: (moduleId: string) => void
+  { moduleId, deleteModule, editModule }: { moduleId: any; deleteModule: (moduleId: any) => void;
+  editModule: (moduleId: any) => void
  }
 ) {
   return (
