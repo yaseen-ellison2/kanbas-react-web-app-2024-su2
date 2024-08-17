@@ -10,6 +10,7 @@ import Grades from "./Grades";
 import Quizzes from "./Quizzes";
 import QuizDetailsEditor from "./Quizzes/QuizDetailsEditor";
 import PeopleTable from "./People/Table";
+import QuizDetails from "./Quizzes/QuizDetails";
 
 
 
@@ -40,7 +41,8 @@ export default function Courses({ courses }: { courses: any[]; }) {
                         <Route path="People/:uid" element={<PeopleTable />} />
                         <Route path="/Quizzes" element={<Quizzes />} />
                         {/* <Route path="/Quizzes/:qid/details/*" element={<h1>Quiz Details</h1>} /> */}
-                        <Route path="/Quizzes/:qid/*" element={< QuizDetailsEditor />} />
+                        <Route path="/Quizzes/:qid/Editor" element={< QuizDetailsEditor />} />
+                        <Route path="Quizzes/:qid/details" element={<QuizDetails />} />
                         <Route path="/Grades" element={<Grades />} />
                     </Routes>
                 </div>
