@@ -30,4 +30,9 @@ export const updateQuiz = async (quiz: any) => {
   return response.data;
 };
 
+export const publishQuiz = async (qid: string) => {
+  const response = await axios.put(`${QUIZZES_API}/${qid}`, { published: "True" });
+  return response.data;
+};
+
 

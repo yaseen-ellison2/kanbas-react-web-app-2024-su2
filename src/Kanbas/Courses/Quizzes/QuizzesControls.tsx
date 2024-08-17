@@ -45,7 +45,7 @@ export default function QuizzesControls(
 
       {currentUser.role === "FACULTY" && (
       <button id="wd-add-module-btn" className="btn btn-lg btn-danger me-1 float-end"
-      onClick={() => window.location.hash = `#/Kanbas/Courses/${cid}/Quizzes/New`}>
+      onClick={() => window.location.hash = `#/Kanbas/Courses/${cid}/Quizzes/New/Editor`}>
 
         <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
         Quiz
