@@ -29,12 +29,17 @@ export default function IndividualControls(
     dispatch(updateQuiz(postQuiz)); // Update redux store
     window.location.reload(); 
   };
+  const handleunPublishQuiz = async () => {
+    const postQuiz = await client.unpublishQuiz(quizId);
+    dispatch(updateQuiz(postQuiz)); // Update redux store
+    window.location.reload();
+  };
 
   return (
     <div className="float-end">
       <FaTrash className="text-danger me-2 mb-1" onClick={() => deleteQuiz(quizId)} />
       {quiz.published === "True" ? (
-        <GreenCheckmark />
+        <GreenCheckmark onClick={handleunPublishQuiz} />
       ) : (
         <FaBan className="text-danger" onClick={handlePublishQuiz}/>
       )}

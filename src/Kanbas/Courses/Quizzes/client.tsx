@@ -35,4 +35,8 @@ export const publishQuiz = async (qid: string) => {
   return response.data;
 };
 
+export const unpublishQuiz = async (qid: string) => {
+  const response = await axios.put(`${QUIZZES_API}/${qid}`, { published: "False" });
+  return response.data;
+};
 
