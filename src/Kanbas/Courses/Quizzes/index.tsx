@@ -9,11 +9,19 @@ import { useSelector, useDispatch } from "react-redux";
 import IndividualControls from "./IndividualControls";
 import ProtectedContent from "../../Account/ProtectedContent";
 
+
+
+
 export default function Quizzes() {
+
+  
   const { cid } = useParams();
   const { quizzes } = useSelector((state: any) => state.quizzesReducer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+
 
   const removeQuiz = async (qid: string) => {
     await client.deleteQuiz(qid);
@@ -43,9 +51,17 @@ export default function Quizzes() {
           Assignment Quizzes
         </div>
 
+        {/* {quizzes
+          .filter((quiz: any) => quiz.course === cid)
+          .map((quiz: any) => { */}
+
         {quizzes
+          .filter((quiz: any) => {
+            return currentUser.role === "FACULTY" || quiz.published === "True";  // Filter logic
+          })
           .filter((quiz: any) => quiz.course === cid)
           .map((quiz: any) => {
+            
             const dueDate = new Date(quiz.due_date);
             const currentDate = new Date();
 
@@ -84,7 +100,8 @@ export default function Quizzes() {
                   <button onClick={() => handlePreviewClick(quiz._id)} className="btn btn-primary mt-2">
                     Quiz Details
                   </button>
-                  <ProtectedContent>
+
+              <ProtectedContent>
                   <IndividualControls
                     deleteQuiz={(quizId) => {
                       removeQuiz(quizId);
@@ -92,7 +109,7 @@ export default function Quizzes() {
                     quizId={quiz._id}
                     quiz={quiz}
                   />
-                </ProtectedContent>
+              </ProtectedContent>
                 <div />
                 <hr/>
               </li>
