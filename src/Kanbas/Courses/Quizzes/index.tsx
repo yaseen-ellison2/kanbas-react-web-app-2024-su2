@@ -7,6 +7,7 @@ import { deleteQuiz, setQuizzes } from "./reducer";
 import * as client from "./client";
 import { useSelector, useDispatch } from "react-redux";
 import IndividualControls from "./IndividualControls";
+import ProtectedContent from "../../Account/ProtectedContent";
 
 export default function Quizzes() {
   const { cid } = useParams();
@@ -83,6 +84,7 @@ export default function Quizzes() {
                   <button onClick={() => handlePreviewClick(quiz._id)} className="btn btn-primary mt-2">
                     Quiz Details
                   </button>
+                  <ProtectedContent>
                   <IndividualControls
                     deleteQuiz={(quizId) => {
                       removeQuiz(quizId);
@@ -90,6 +92,7 @@ export default function Quizzes() {
                     quizId={quiz._id}
                     quiz={quiz}
                   />
+                </ProtectedContent>
                 <div />
                 <hr/>
               </li>

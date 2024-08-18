@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import Account from "./Account";
 import Session from "./Account/Session";
 import ProtectedRoute from "./Account/ProtectedRoute";
+import Listings from "./Listings";
 
 
 export default function Kanbas() {
@@ -25,15 +26,17 @@ export default function Kanbas() {
 
 
     const [course, setCourse] = useState<any>({
-        _id: "0", name: "New Course", number: "New Number",
+        _id: "0", name: "Course Name", number: "New Number",
         startDate: "2023-09-10", endDate: "2023-12-15",
-        image: "/images/reactjs.jpg", description: "New Description"
+        image: "/images/reactjs.jpg", description: "Course Description"
     });
 
     const addNewCourse = async () => {
         const newCourse = await client.createCourse(course);
         setCourses([...courses, newCourse]);
+        return newCourse;  // Return the new course for further processing. need for id to not be 0 at enroll in dashboard
     };
+
 
 
     const deleteCourse = async (courseId: string) => {
@@ -78,7 +81,7 @@ export default function Kanbas() {
                             </ProtectedRoute>
                             } 
                             />
-                            
+                        <Route path="Courses" element={<ProtectedRoute> <Listings courses={courses}/> </ProtectedRoute>}  />
                         <Route path="Courses/:cid/*" element={<ProtectedRoute><Courses courses={courses} /></ProtectedRoute> } />
                         <Route path="Calendar" element={<h1>Calendar</h1>} />
                         <Route path="Inbox" element={<h1>Inbox</h1>} />
@@ -90,22 +93,3 @@ export default function Kanbas() {
         </Provider>
     );
 }
-
-//Suggestion at 1:20:00 in July 25 class.
-
-
-// This was mine below, changed it to encorporate what he did
-// export default function Kanbas() {
-//     return (
-//         <div id="wd-kanbas">
-//             <KanbasNavigation />
-//             <div className="wd-main-content-offset p-3">
-//                     <Routes>
-//                         <Route path="/" element={<Navigate to="Dashboard" />} />
-//                         <Route path="Dashboard" element={<Dashboard />} />
-//                         <Route path="Courses/:id/*" element={<Courses />} />
-//                     </Routes>
-//                 </div>
-//         </div>
-//     );
-// }

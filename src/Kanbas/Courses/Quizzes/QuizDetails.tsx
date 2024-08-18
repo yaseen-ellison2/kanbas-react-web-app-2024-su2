@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
+import ProtectedContent from '../../Account/ProtectedContent';
 
 export default function QuizDetails() {
   const { cid, qid } = useParams();
@@ -46,14 +47,16 @@ export default function QuizDetails() {
         className="btn btn-secondary"
         onClick={() => (window.location.hash = `#/Kanbas/Courses/${cid}/Quizzes/`)}
       >
-        Save
+        Close
       </button>
+      <ProtectedContent>
       <button
         className="btn btn-primary"
         onClick={() => (window.location.hash = `#/Kanbas/Courses/${cid}/Quizzes/${qid}/Editor`)}
       >
         Edit
       </button>
+      </ProtectedContent>
     </div>
   );
 }

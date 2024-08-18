@@ -18,6 +18,7 @@ export default function PeopleTable() {
     }
   };
   const [name, setName] = useState("");
+  
   const createUser = async () => {
     const user = await client.createUser({
       firstName: "New",
