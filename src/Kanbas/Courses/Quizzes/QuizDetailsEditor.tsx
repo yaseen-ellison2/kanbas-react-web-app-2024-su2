@@ -27,6 +27,8 @@ export default function QuizDetailsEditor() {
     shuffle_answers: "True",
     time_limit: "20",
     multiple_attempts: "False",
+    num_attempts: 1,
+    num_questions: 1, 
     show_correct: "False",
     access_code: "",
     one_q_at_a_time: "False",
@@ -37,21 +39,27 @@ export default function QuizDetailsEditor() {
 
   const handleSaveQuiz = async () => {
     try {
+      // Calculate the number of questions
+      const updatedQuiz = {
+        ...quiz,
+        num_questions: quiz.questions.length
+      };
+  
       if (qid !== 'New') {
         // Handle updating an existing quiz
-        await client.updateQuiz(quiz);
-        dispatch(updateQuiz(quiz));
+        await client.updateQuiz(updatedQuiz);
+        dispatch(updateQuiz(updatedQuiz));
         navigate(`/Kanbas/Courses/${cid}/Quizzes/${qid}/details`);
       } else {
         // Handle creating a new quiz
-        const createdQuiz = await client.createQuiz(cid, quiz);
+        const createdQuiz = await client.createQuiz(cid, updatedQuiz);
         dispatch(addQuiz(createdQuiz));
         navigate(`/Kanbas/Courses/${cid}/Quizzes`);
       }
     } catch (error) {
       console.error('Failed to save the quiz:', error);
     }
-  };
+  };  
 
   useEffect(() => {
     if (qid !== 'New') {

@@ -70,12 +70,12 @@ export default function Quizzes() {
                 <BsRocketTakeoff className="me-2 fs-3" />
                 <a
                   className="wd-quiz-link"
-                  href={`#/Kanbas/Courses/${quiz.course}/Quizzes/${quiz._id}`}
+                  href={`#/Kanbas/Courses/${quiz.course}/Quizzes/${quiz._id}/Form`}
                 >
                   {quiz._id} - {quiz.title}
                 </a>
                 <br />
-                Multiple Modules |{" "}
+                {quiz.num_questions} Questions|{" "}
                 {currentDate > dueDate ? (
                   <b>Closed</b>
                 ) : (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from "react-router";
 import { useSelector } from 'react-redux';
 import ProtectedContent from '../../Account/ProtectedContent';
 
@@ -7,6 +7,11 @@ export default function QuizDetails() {
   const { cid, qid } = useParams();
   const { quizzes } = useSelector((state: any) => state.quizzesReducer);
   const [quiz, setQuiz] = useState<any>(null);
+  const navigate = useNavigate();
+
+  const handlePreviewClick = (qid: string) => {
+    navigate(`/Kanbas/Courses/${cid}/Quizzes/${qid}/Form`);
+  };
 
   // Fetch the correct quiz based on the quizId from params
   useEffect(() => {
@@ -43,22 +48,29 @@ export default function QuizDetails() {
         <li><b>Available Date:</b> {new Date(quiz.available_date).toLocaleDateString('en-US')}</li>
         <li><b>Until Date:</b> {new Date(quiz.available_until_date).toLocaleDateString('en-US')}</li>
       </ul>
+
+      <button onClick={() => handlePreviewClick(quiz._id)} className="btn btn-primary">
+        Preview
+      </button>
+      
       <button
         className="btn btn-secondary"
-        onClick={() => (window.location.hash = `#/Kanbas/Courses/${cid}/Quizzes/`)}
+        onClick={() => navigate(`/Kanbas/Courses/${cid}/Quizzes/`)}  // Navigate back to the quiz list
       >
         Close
       </button>
+
       <ProtectedContent>
-      <button
-        className="btn btn-primary"
-        onClick={() => (window.location.hash = `#/Kanbas/Courses/${cid}/Quizzes/${qid}/Editor`)}
-      >
-        Edit
-      </button>
+        <button
+          className="btn btn-primary"
+          onClick={() => navigate(`/Kanbas/Courses/${cid}/Quizzes/${qid}/Editor`)} // Navigate to quiz editor
+        >
+          Edit
+        </button>
       </ProtectedContent>
     </div>
   );
 }
+
 
 
