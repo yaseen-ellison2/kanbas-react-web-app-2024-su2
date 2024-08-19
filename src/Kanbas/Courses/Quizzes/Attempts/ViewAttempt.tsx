@@ -33,22 +33,22 @@ export default function ViewAttempt() {
     <div className="view-attempt">
       <h2>{quiz.title} - Attempt Review</h2>
       <p>{quiz.description}</p>
+      <hr/><hr />
 
       {quiz.questions.map((question: any, index: number) => {
         const userAnswer = attempt.answers.find((ans: any) => ans.qqid === question._id);
 
         return (
           <div key={index} className="answer-block">
-            <h4>{question.question}</h4>
+            <h5>Question: {question.question} </h5>
+            <br/>
             <p>Your answer: {userAnswer ? userAnswer.answer : "No answer provided"}</p>
-            <p>Correct answer: {question.correct_answer}</p> {/* Assuming the quiz has a correct_answer field */}
+            <p>Correct answer: {question.answer}</p> 
+            <hr/>
 
             {/* Show whether the answer was correct or not */}
-            {userAnswer && userAnswer.answer === question.correct_answer ? (
-              <p style={{ color: 'green' }}>Correct</p>
-            ) : (
-              <p style={{ color: 'red' }}>Incorrect</p>
-            )}
+
+
           </div>
         );
       })}
