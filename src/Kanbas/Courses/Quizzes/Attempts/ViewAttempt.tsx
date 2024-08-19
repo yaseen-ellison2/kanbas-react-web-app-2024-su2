@@ -33,7 +33,14 @@ export default function ViewAttempt() {
   }, [qid, currentUser, quizzes]);
 
   if (!attempt || !quiz) {
-    return <div> No Attempts Recorded</div>;
+    return <div>
+      <button
+        className="btn btn-danger"
+        onClick={() => navigate(`/Kanbas/Courses/${cid}/Quizzes/`)}  // Navigate back to the quiz list
+      >
+        No Attempt Recorded. Go Back
+      </button>
+    </div>
   }
 
 
