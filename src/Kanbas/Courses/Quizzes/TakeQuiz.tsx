@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from "react-router";
 import { useSelector } from 'react-redux';
 import { saveAttempt } from './Attempts/client';
+import ProtectedContent from '../../Account/ProtectedContent';
 
 export default function TakeQuiz() {
   const { cid, qid } = useParams();
@@ -127,6 +128,14 @@ export default function TakeQuiz() {
       <button type="button" className="btn btn-primary" onClick={handleSubmit}>
         Submit Quiz
       </button>
+      <ProtectedContent>
+      <button
+        className="btn btn-danger"
+        onClick={() => navigate(`/Kanbas/Courses/${cid}/Quizzes/`)}  // Navigate back to the quiz list
+      >
+        Cancel Attempt
+      </button>
+      </ProtectedContent>
     </div>
   );
 }
