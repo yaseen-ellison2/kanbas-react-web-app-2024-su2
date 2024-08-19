@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 type QuestionType = 'multiple_choice' | 'true_false' | 'fill_in_the_blanks';
 
 interface Question {
-  _id: string | null;
+  //_id: string | null;
   question: string;
   answer: string[]; // Use 'answer' instead of 'answers'
   quiz: string;
@@ -35,7 +35,7 @@ export default function QuizQuestionsTab({ quiz, setQuiz }: QuizQuestionsTabProp
   const handleAddQuestion = () => {
     const initialSettings = initializeQuestion('multiple_choice');
     const newQuestion: Question = {
-      _id: null,
+      //_id: null,
       question: '',
       ...initialSettings,
       quiz: quiz._id,

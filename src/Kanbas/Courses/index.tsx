@@ -12,6 +12,7 @@ import QuizDetailsEditor from "./Quizzes/QuizDetailsEditor";
 import PeopleTable from "./People/Table";
 import QuizDetails from "./Quizzes/QuizDetails";
 import QuizTakingComponent from "./Quizzes/TakeQuiz";
+import ViewAttempt from "./Quizzes/Attempts/ViewAttempt";
 
 
 
@@ -44,7 +45,8 @@ export default function Courses({ courses }: { courses: any[]; }) {
                         {/* <Route path="/Quizzes/:qid/details/*" element={<h1>Quiz Details</h1>} /> */}
                         <Route path="/Quizzes/:qid/Editor" element={< QuizDetailsEditor />} />
                         <Route path="Quizzes/:qid/details" element={<QuizDetails />} />
-                        <Route path="Quizzes/:qid/Form" element={<QuizTakingComponent />} /> 
+                        <Route path="Quizzes/:qid/Form" element={<QuizTakingComponent />} />
+                        <Route path="/Quizzes/:qid/Attempt" element={<ViewAttempt />} />  
                         <Route path="/Grades" element={<Grades />} />
                     </Routes>
                 </div>

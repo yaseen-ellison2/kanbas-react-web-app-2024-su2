@@ -41,6 +41,10 @@ export default function Quizzes() {
     navigate(`/Kanbas/Courses/${cid}/Quizzes/${qid}/details`);
   };
 
+  const handleViewAttempt = (qid: string) => {
+    navigate(`/Kanbas/Courses/${cid}/Quizzes/${qid}/Attempt`);  // Replace with the actual path
+  };
+
   return (
     <div id="wd-quizzes">
       <QuizzesControls quizName="A101" quizId="24" />
@@ -100,6 +104,11 @@ export default function Quizzes() {
                   <button onClick={() => handlePreviewClick(quiz._id)} className="btn btn-primary mt-2">
                     Quiz Details
                   </button>
+
+                <button onClick={() => handleViewAttempt(quiz._id)} className="btn btn-secondary mt-2">
+                  View Latest Attempt
+                </button>
+
 
               <ProtectedContent>
                   <IndividualControls

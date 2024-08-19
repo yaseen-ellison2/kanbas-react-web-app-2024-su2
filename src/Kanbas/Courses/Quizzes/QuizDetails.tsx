@@ -49,12 +49,14 @@ export default function QuizDetails() {
         <li><b>Until Date:</b> {new Date(quiz.available_until_date).toLocaleDateString('en-US')}</li>
       </ul>
 
-      <button onClick={() => handlePreviewClick(quiz._id)} className="btn btn-primary">
+      <ProtectedContent>
+      <button onClick={() => handlePreviewClick(quiz._id)} className="btn btn-success">
         Preview
       </button>
+      </ProtectedContent>
       
       <button
-        className="btn btn-secondary"
+        className="btn btn-danger"
         onClick={() => navigate(`/Kanbas/Courses/${cid}/Quizzes/`)}  // Navigate back to the quiz list
       >
         Close
