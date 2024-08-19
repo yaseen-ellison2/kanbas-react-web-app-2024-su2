@@ -34,6 +34,7 @@ export default function QuizQuestionsTab({ quiz, setQuiz }: QuizQuestionsTabProp
 
   const handleAddQuestion = () => {
     const initialSettings = initializeQuestion('multiple_choice');
+    
     const newQuestion: Question = {
       //_id: null,
       question: '',
