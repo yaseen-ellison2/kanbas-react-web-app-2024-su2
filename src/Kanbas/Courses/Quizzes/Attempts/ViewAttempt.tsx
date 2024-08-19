@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { useSelector } from 'react-redux';
 import { findAttemptsForUser } from './client';
 import { FcCheckmark } from "react-icons/fc";
@@ -15,6 +15,9 @@ export default function ViewAttempt() {
 
   const [attempt, setAttempt] = useState<any>(null);
   const [quiz, setQuiz] = useState<any>(null);
+  const navigate = useNavigate();
+  const { cid} = useParams();
+
 
   useEffect(() => {
     const loadAttempt = async () => {
@@ -41,6 +44,12 @@ export default function ViewAttempt() {
     <div className="view-attempt">
       <h2>{quiz.title} - Attempt Review</h2>
       <p>Your Last Attempt at {attempt.submittedDate} </p>
+      <button
+        className="btn btn-danger"
+        onClick={() => navigate(`/Kanbas/Courses/${cid}/Quizzes/`)}  // Navigate back to the quiz list
+      >
+        Close
+      </button>
       <hr /><hr />
 
       {quiz.questions.map((question: any, index: number) => {
@@ -74,7 +83,7 @@ export default function ViewAttempt() {
       <div className="correct-count" style={{ color: 'blue' }}>
         <h3>Total Correct Answers: {correctCount} / {quiz.questions.length}</h3>
       </div>
-      
+
     </div>
   );
 }
