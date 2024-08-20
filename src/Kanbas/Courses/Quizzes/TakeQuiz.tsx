@@ -1,4 +1,4 @@
-
+//old version in case new breaks
 // import React, { useEffect, useState } from 'react';
 // import { useParams, useNavigate } from "react-router";
 // import { useSelector } from 'react-redux';
