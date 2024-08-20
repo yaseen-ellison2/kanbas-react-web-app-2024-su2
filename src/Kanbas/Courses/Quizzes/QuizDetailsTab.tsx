@@ -4,15 +4,15 @@ export default function QuizDetailsTab({ quiz, setQuiz }: { quiz: any; setQuiz: 
   // Handle changes in the "Multiple Attempts" select box
   const handleMultipleAttemptsChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const multipleAttempts = e.target.value;
-    // Ensures num_attempts is set to 1 if "Multiple Attempts" is "No"
-    const numAttempts = multipleAttempts === "True" ? (quiz.num_attempts || 1) : 1;
-    setQuiz({ ...quiz, multiple_attempts: multipleAttempts, num_attempts: numAttempts });
+    // Ensures max_attempts is set to 1 if "Multiple Attempts" is "No"
+    const numAttempts = multipleAttempts === "True" ? (quiz.max_attempts || 1) : 1;
+    setQuiz({ ...quiz, multiple_attempts: multipleAttempts, max_attempts: numAttempts });
   };
 
   // Handle changes in the number of attempts input when "Multiple Attempts" is "Yes"
   const handleNumAttemptsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const numAttempts = parseInt(e.target.value, 10) || 1; // Ensuring a minimum of 1 attempt
-    setQuiz({ ...quiz, num_attempts: numAttempts });
+    setQuiz({ ...quiz, max_attempts: numAttempts });
   };
 
   return (
@@ -167,7 +167,7 @@ export default function QuizDetailsTab({ quiz, setQuiz }: { quiz: any; setQuiz: 
             <input
               type="number"
               className="form-control"
-              value={quiz.num_attempts || 1}
+              value={quiz.max_attempts || 1}
               onChange={handleNumAttemptsChange}
               min="1"
             />

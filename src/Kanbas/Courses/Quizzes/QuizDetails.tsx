@@ -37,7 +37,7 @@ export default function QuizDetails() {
         <li><b>Time Limit:</b> {quiz.time_limit || '20 Minutes'}</li>
         <li><b>Multiple Attempts:</b> {quiz.multiple_attempts === 'True' ? 'Yes' : 'No'}</li>
         {quiz.multiple_attempts === 'True' && (
-          <li><b>How Many Attempts:</b> {quiz.num_attempts || '1'}</li>
+          <li><b>How Many Attempts:</b> {quiz.max_attempts || '1'}</li>
         )}
         <li><b>Show Correct Answers:</b> {quiz.show_correct === 'True' ? 'Yes' : 'No'}</li>
         <li><b>Access Code:</b> {quiz.access_code || 'None'}</li>
