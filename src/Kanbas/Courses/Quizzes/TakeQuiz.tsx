@@ -256,7 +256,12 @@ export default function TakeQuiz() {
   };
 
   if (quiz && attemptNumber === quiz.max_attempts) {
-    return <div>Max Attempts Reached</div>;
+    return <div><button
+      className="btn btn-danger"
+      onClick={() => navigate(`/Kanbas/Courses/${cid}/Quizzes/`)}
+    >
+      Max Attempts Reached, Go Back
+    </button></div>;
   }
 
   if (!quiz) {
