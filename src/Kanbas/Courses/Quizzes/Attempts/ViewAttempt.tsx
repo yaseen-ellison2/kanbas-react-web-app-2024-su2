@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from "react-router";
 import { useSelector } from 'react-redux';
@@ -8,7 +6,7 @@ import { FcCheckmark } from "react-icons/fc";
 import { GiSkullCrossedBones } from "react-icons/gi";
 
 export default function ViewAttempt() {
-  const { qid } = useParams();  
+  const { qid } = useParams();
   const { currentUser } = useSelector((state: any) => state.accountReducer);
   const { quizzes } = useSelector((state: any) => state.quizzesReducer);
 
@@ -43,7 +41,8 @@ export default function ViewAttempt() {
     );
   }
 
-  let correctCount = 0;
+  let totalPoints = 0;
+  let maxPoints = 0;
 
   return (
     <div className="view-attempt">
@@ -60,7 +59,7 @@ export default function ViewAttempt() {
       {quiz.questions.map((question: any, index: number) => {
         const userAnswer = attempt.answers.find((ans: any) => ans.qqid === question._id);
 
-        // Check if answers are correct
+        // Check if the answer is correct
         const isCorrect = userAnswer &&
           Array.isArray(userAnswer.answer) &&
           Array.isArray(question.answer) &&
@@ -68,27 +67,31 @@ export default function ViewAttempt() {
           userAnswer.answer.every((ans: string, i: number) => ans === question.answer[i]);
 
         if (isCorrect) {
-          correctCount++;
+          totalPoints += question.points;  // Add the question's points to the total
         }
+
+        maxPoints += question.points;  // Add the maximum points for the question
 
         return (
           <div key={index} className="answer-block">
             <h5>Question: {question.question}</h5>
             <br />
-            <p>Your answer : 
-            {userAnswer ? (
-              userAnswer.answer.map((ans: string, i: number) => (
-                <div key={i} style={{ display: 'inline-flex', alignItems: 'center', marginRight: '10px' }}>
-                  <span>{ans}</span>
-                  {ans === question.answer[i] ? (
-                    <FcCheckmark style={{ marginLeft: '5px', color: 'green' }} />
-                  ) : (
-                    <GiSkullCrossedBones style={{ marginLeft: '5px', color: 'red' }} />
-                  )}
-                </div>
-              ))
-            ) : (
-              <span>No answer provided</span>
+            <p>Your answer :
+              {userAnswer ? (
+                userAnswer.answer.map((ans: string, i: number) => (
+                  <div key={i} style={{ display: 'inline-flex', alignItems: 'center', marginRight: '10px' }}>
+                    <span>{ans}</span>
+                    {ans === question.answer[i] ? (
+                      <FcCheckmark style={{ marginLeft: '5px', color: 'green' }} />
+                    ) : (
+                      <GiSkullCrossedBones style={{ marginLeft: '5px', color: 'red' }} />
+                    )}
+
+                  </div>
+
+                ))
+              ) : (
+                <span>No answer provided</span>
               )}</p>
 
             <hr />
@@ -96,9 +99,8 @@ export default function ViewAttempt() {
         );
       })}
 
-      {/* Display the total correct count */}
-      <div className="correct-count" style={{ color: 'blue' }}>
-        <h3>Total Correct Answers: {correctCount} / {quiz.questions.length}</h3>
+      <div className="score-summary" style={{ color: 'blue' }}>
+        <h3>Total Points Scored: {totalPoints} / {maxPoints}</h3>  
       </div>
 
     </div>
