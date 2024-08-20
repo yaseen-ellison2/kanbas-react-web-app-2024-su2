@@ -195,6 +195,7 @@ export default function TakeQuiz() {
         qqid: questionId,
         question: question.question,  // Optionally store the question text
         answer: answer,  // Store the answer as an array
+        points: question.points
       };
     });
 
